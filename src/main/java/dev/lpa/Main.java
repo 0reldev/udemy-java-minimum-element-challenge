@@ -13,7 +13,8 @@ public class Main {
         int returnedMin = findMin(returnedArray);
         System.out.println("min = " + returnedMin);
 
-        System.out.println("reversed array: " + Arrays.toString(reverse(returnedArray)));
+        reverse(returnedArray);
+        System.out.println("reversed array: " + Arrays.toString(returnedArray));
     }
 
     private static int[] readIntegers() {
@@ -38,11 +39,13 @@ public class Main {
         return min;
     }
 
-    private static int[] reverse(int[] array) {
-        int[] reversedArray = Arrays.copyOf(array, array.length);
-        for (int i = 0; i < array.length; i++) {
-            reversedArray[i] = array[array.length - i - 1];
+    private static void reverse(int[] array) {
+        int maxIndex = array.length - 1;
+        int halfLength = array.length / 2;
+        for (int i = 0; i < halfLength; i++) {
+            int temp = array[i];
+            array[i] = array[maxIndex - i];
+            array[maxIndex - i] = temp;
         }
-        return reversedArray;
     }
 }
