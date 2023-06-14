@@ -48,4 +48,13 @@ public class Main {
             array[maxIndex - i] = temp;
         }
     }
+
+    private static int[] reverseCopy(int[] array) {
+        int[] reversedArray = new int[array.length];
+        int maxIndex = array.length - 1;
+        for (int el : array) {
+            reversedArray[maxIndex--] = el;
+        }
+        return reversedArray;
+    }
 }
