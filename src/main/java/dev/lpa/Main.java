@@ -12,6 +12,8 @@ public class Main {
 
         int returnedMin = findMin(returnedArray);
         System.out.println("min = " + returnedMin);
+
+        System.out.println("reversed array: " + Arrays.toString(reverse(returnedArray)));
     }
 
     private static int[] readIntegers() {
@@ -34,5 +36,13 @@ public class Main {
             }
         }
         return min;
+    }
+
+    private static int[] reverse(int[] array) {
+        int[] reversedArray = Arrays.copyOf(array, array.length);
+        for (int i = 0; i < array.length; i++) {
+            reversedArray[i] = array[array.length - i - 1];
+        }
+        return reversedArray;
     }
 }
